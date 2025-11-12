@@ -179,13 +179,10 @@ import { useState, useEffect } from "react";
 import { Input } from "../components/ui/Input.jsx";
 import {
   Select,
-  SelectContent,
   SelectItem,
-  SelectTrigger,
-  SelectValue,
 } from "../components/ui/Select.jsx";
 import CourseCard from "../components/CourseCard.jsx";
-import { Search, ChevronDown } from "lucide-react";
+import { Search } from "lucide-react";
 import "../styles/Courses.css";
 import firestoreService from "../services/firestoreService";
 

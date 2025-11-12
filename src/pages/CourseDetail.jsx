@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "../components/ui/Button.jsx";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card.jsx";
 import { Separator } from "../components/ui/Separator.jsx";
@@ -24,11 +23,7 @@ const CourseDetail = () => {
   const [loading, setLoading] = useState(true);
   const defaultImage = courseDataImg;
 
-  useEffect(() => {
-    loadCourse();
-  }, [id]);
-
-  const loadCourse = async () => {
+  const loadCourse = useCallback(async () => {
     try {
       const courseData = await firestoreService.getCourseById(id);
       if (courseData) {
@@ -66,7 +61,11 @@ const CourseDetail = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, defaultImage]);
+
+  useEffect(() => {
+    loadCourse();
+  }, [loadCourse]);
 
   if (loading) {
     return (

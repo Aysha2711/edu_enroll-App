@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
 
   // ✅ Signup Function - Register as student
   const signup = async (email, password, userData) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    await createUserWithEmailAndPassword(auth, email, password);
     
     // Add to student collection
     await firestoreService.addStudent({

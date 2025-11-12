@@ -162,4 +162,5 @@ class FirestoreService {
   }
 }
 
-export default new FirestoreService();
+const firestoreService = new FirestoreService();
+export default firestoreService;

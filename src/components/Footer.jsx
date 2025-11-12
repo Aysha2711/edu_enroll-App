@@ -51,10 +51,10 @@ const Footer = () => {
             <h3>Legal</h3>
             <ul>
               <li>
-                <a href="#">Terms of Service</a>
+                <button type="button" style={{background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', cursor: 'pointer'}}>Terms of Service</button>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <button type="button" style={{background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', cursor: 'pointer'}}>Privacy Policy</button>
               </li>
               <li>
                 <Link to="/verify">Verify Certificate</Link>
@@ -76,24 +76,30 @@ const Footer = () => {
               </li>
             </ul>
             <div className="flex gap-4" style={{marginTop: '1rem'}}>
-              <a href="#" className="text-muted-foreground" style={{
+              <button type="button" className="text-muted-foreground" style={{
                 transition: 'color 0.2s',
-                textDecoration: 'none'
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer'
               }}>
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-muted-foreground" style={{
+              </button>
+              <button type="button" className="text-muted-foreground" style={{
                 transition: 'color 0.2s',
-                textDecoration: 'none'
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer'
               }}>
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-muted-foreground" style={{
+              </button>
+              <button type="button" className="text-muted-foreground" style={{
                 transition: 'color 0.2s',
-                textDecoration: 'none'
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer'
               }}>
                 <Youtube className="w-5 h-5" />
-              </a>
+              </button>
             </div>
           </div>
         </div>

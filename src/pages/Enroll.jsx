@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card, CardHeader, CardContent, CardTitle } from "../components/ui/Card.jsx";
 import { Button } from "../components/ui/Button.jsx";
 import { Separator } from "../components/ui/Separator.jsx";
@@ -23,6 +23,17 @@ const Enroll = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const loadCourse = useCallback(async () => {
+    if (id) {
+      try {
+        const courseData = await firestoreService.getCourseById(id);
+        setCourse(courseData);
+      } catch (error) {
+        console.error('Error loading course:', error);
+      }
+    }
+  }, [id]);
+
   useEffect(() => {
     // Check if user is logged in
     const userRole = localStorage.getItem('userRole');
@@ -33,18 +44,7 @@ const Enroll = () => {
     }
     
     loadCourse();
-  }, [id, navigate]);
-
-  const loadCourse = async () => {
-    if (id) {
-      try {
-        const courseData = await firestoreService.getCourseById(id);
-        setCourse(courseData);
-      } catch (error) {
-        console.error('Error loading course:', error);
-      }
-    }
-  };
+  }, [navigate, loadCourse]);
 
   const handleInputChange = (e) => {
     let value = e.target.value;
