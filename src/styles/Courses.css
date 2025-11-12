@@ -1,0 +1,154 @@
+/* Courses Page Styles */
+.courses-container {
+  min-height: 100vh;
+  padding: 3rem 0;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideUp 0.6s ease-out;
+}
+
+.courses-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.courses-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.courses-filters {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px -4px rgba(37, 99, 235, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.courses-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.courses-search-wrapper {
+  position: relative;
+}
+
+.courses-search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 38%;
+  transform: translateY(-50%);
+  height: 1.1rem;
+  width: 1.1rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.courses-search-input {
+  padding-left: 2.75rem !important;
+  height: 2.75rem;
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+}
+
+.courses-select-wrapper {
+  position: relative;
+}
+
+.courses-dropdown-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  width: 1rem;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.courses-results-count {
+  margin-bottom: 1.5rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.courses-no-results {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.courses-no-results-title {
+  color: #64748b;
+  font-size: 1.125rem;
+}
+
+.courses-no-results-subtitle {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.courses-search-icon{
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
+}
+
+/* Show More Button */
+.show-more-btn {
+  background-color: #4a69e2;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #3556c6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .courses-title {
+    font-size: 3rem;
+  }
+
+  .courses-filters-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

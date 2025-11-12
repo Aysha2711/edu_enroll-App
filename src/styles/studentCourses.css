@@ -1,0 +1,263 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafc;
+  color: #1e293b;
+}
+
+/* ===== Dashboard Container ===== */
+.dashboard-container {
+  padding: 2rem 4rem;
+}
+
+/* ===== Header ===== */
+.dashboard-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+/* ===== Summary Cards ===== */
+.stats-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h4 {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.summary-card p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0;
+}
+
+/* ===== Courses Grid ===== */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Course Card ===== */
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-image {
+  position: relative;
+  height: 180px;
+  background-color: #f1f5f9;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.status-badge.completed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.in-progress {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+/* ===== Course Content ===== */
+.course-content {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.course-category {
+  background: #f1f5f9;
+  font-size: 0.75rem;
+  color: #475569;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.course-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
+
+.author {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.progress-wrapper {
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a237e, #4fc3f7);
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  color: #475569;
+  margin-top: 0.25rem;
+}
+
+.enrolled {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* ===== Buttons ===== */
+.continue-btn,
+.review-btn {
+  align-self: flex-start;
+  margin-top: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.continue-btn {
+  background-color: #1a237e;
+}
+
+.review-btn {
+  background-color: #001c91;
+}
+
+.continue-btn:hover,
+.review-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== Courses Grid ===== */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.8rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Force max 3 cards per row on large screens */
+@media (min-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium screens (tablets) - 2 per row */
+@media (max-width: 991px) and (min-width: 601px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (mobiles) - 1 per row */
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Course Card ===== */
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Course Image ===== */
+.course-image {
+  position: relative;
+  height: 180px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Course Content ===== */
+.course-content {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-grow: 1;
+}
+
+/* Keep consistent button and text alignment */
+.course-content button {
+  margin-top: auto;
+}

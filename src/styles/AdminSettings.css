@@ -1,0 +1,127 @@
+/* Admin Settings Page Styles */
+.admin-settings-container {
+  padding: 2rem;
+}
+
+.admin-settings-header {
+  margin-bottom: 2rem;
+}
+
+.admin-settings-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.admin-settings-subtitle {
+  color: #64748b;
+}
+
+.admin-settings-tabs {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.admin-settings-tab {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.admin-settings-tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.admin-settings-tab:hover {
+  color: #2563eb;
+}
+
+.admin-settings-content {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-settings-section {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.admin-settings-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.admin-settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.admin-settings-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.admin-settings-input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.15s;
+}
+
+.admin-settings-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.admin-settings-textarea {
+  display: flex;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.15s;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-settings-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.admin-settings-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .admin-settings-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

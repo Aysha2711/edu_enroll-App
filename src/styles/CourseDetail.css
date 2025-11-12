@@ -1,0 +1,218 @@
+/* --- Container & Base --- */
+.course-detail-container {
+  font-family: 'Inter', sans-serif;
+  background-color: #F9FAFF;
+  color: #1F2044;
+}
+
+/* --- Hero Section --- */
+.course-detail-hero {
+  background: linear-gradient(135deg, hsl(235 67% 31%), hsl(235 67% 45%));
+  color: white;
+  padding: 1rem 1rem 2rem 1rem; /* reduced height */
+  position: relative;
+
+}
+
+.hero-top-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+.hero-top-left .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer
+}
+
+.hero-top-left .back-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.course-detail-hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.course-detail-info {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.course-detail-info h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.course-detail-info p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.course-detail-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.course-detail-meta-item svg {
+  color: white;
+}
+
+.course-detail-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.course-detail-buttons .enroll-btn {
+  background-color: #F97316;
+  color: white;
+}
+
+.course-detail-buttons .preview-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.course-detail-image img {
+  border-radius: 1rem;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* --- Main Content --- */
+.course-detail-content {
+  padding: 4rem 2rem;
+  
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.checklist-item svg {
+  color: #10B981;
+  margin-top: 0.125rem;
+}
+
+.syllabus-week {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.syllabus-week-number {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: #4A69E2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.topic-badge {
+  background-color: #E5E7EB;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* --- Requirements --- */
+.requirements-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* --- Instructor Sidebar --- */
+.instructor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.instructor-avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: #4A69E2;
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.button-accent {
+  background-color: #F97316;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button-outline {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+.back-btn {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .course-detail-hero-content {
+    flex-direction: column;
+  }
+
+  .hero-top-left {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-detail-info h1 {
+    font-size: 2rem;
+  }
+}

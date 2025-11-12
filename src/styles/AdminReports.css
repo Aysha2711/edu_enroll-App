@@ -1,0 +1,66 @@
+/* Admin Reports Page Styles */
+.admin-reports-container {
+  padding: 2rem;
+}
+
+.admin-reports-header {
+  margin-bottom: 2rem;
+}
+
+.admin-reports-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.admin-reports-subtitle {
+  color: #64748b;
+}
+
+.admin-reports-filters {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-reports-charts {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-reports-metrics {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-reports-export {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .admin-reports-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .admin-reports-charts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .admin-reports-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-reports-metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
