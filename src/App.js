@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Initialize Firebase first
 import "./utils/firebaseInit.js";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-import FirebaseStatus from "./components/FirebaseStatus.jsx";
+
 import Layout from "./components/Layout.jsx";
 import AdminLayout from "./components/AdminLayout.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -41,7 +41,6 @@ localStorage.removeItem('authToken');
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <FirebaseStatus />
       <BrowserRouter>
 
       <Routes>

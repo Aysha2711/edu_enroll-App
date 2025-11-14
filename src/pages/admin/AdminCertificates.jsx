@@ -375,11 +375,11 @@ const AdminCertificate = () => {
             <form onSubmit={handleBulkGenerate}>
              
 
-              <label>Upload Student List (Excel):</label>
+              <label>Upload Student List:</label>
               <div className="upload-section">
-                <label htmlFor="bulkFile" className="upload-label">git 
+                <label htmlFor="bulkFile" className="upload-label">
                   <Upload className="upload-icon" />
-                  <span>Click to upload Excel file (.xlsx)</span>
+                  <span>Click to upload file (.csv)</span>
                 </label>
                 <input id="bulkFile" type="file" accept=".xlsx, .xls" onChange={handleBulkFileUpload} hidden />
               </div>
@@ -388,7 +388,7 @@ const AdminCertificate = () => {
                 <Download size={16} /> Download CSV Template
               </button>
 
-              {bulkData.length > 0 && <p className="file-info">{bulkData.length} students loaded from Excel</p>}
+              {bulkData.length > 0 && <p className="file-info">{bulkData.length} students loaded from CSV</p>}
 
               <div className="popup-buttons">
                 <button type="submit" className="save-btn">Generate</button>
