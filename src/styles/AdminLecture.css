@@ -1,0 +1,302 @@
+.admin-lectures-container {
+  background-color: #f8fafc;
+  padding: 2rem;
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+.admin-lectures-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.admin-lectures-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.add-lecture-btn {
+  background: #0f175c;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-lecture-btn:hover {
+  background: linear-gradient(135deg, hsl(235 67% 35%), hsl(235 67% 50%));
+}
+
+.admin-lectures-search {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.admin-lectures-table-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.admin-lectures-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-lectures-table th,
+.admin-lectures-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-lectures-table th {
+  font-weight: 600;
+  color: #334155;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  color: #2563eb;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 30px;
+  width: 600px;
+  max-width: 90%;
+  animation: fadeInUp 0.25s ease-in-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: #0f175c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Form Styles */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-content label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.modal-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Detail Modal */
+.lecture-detail-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 30px;
+  width: 600px;
+  max-width: 90%;
+  position: relative;
+  animation: fadeInUp 0.25s ease-in-out;
+  align-items: center;
+}
+
+.lecture-detail-modal h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-row strong {
+  color: #374151;
+  font-weight: 500;
+}
+
+.admin-lectures-subtitle {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.admin-lectures-search-input {
+  padding-left: 2.5rem !important;
+}
+
+/* Status Buttons */
+.status-btn {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-btn.active {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.status-btn.blocked {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status-btn.active:hover {
+  background-color: #c8e6c9;
+}
+
+.status-btn.blocked:hover {
+  background-color: #ffcdd2;
+}
+
+/* Status Badge for Detail Modal */
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e0e7ff;
+  color: #1e40af;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge.active {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+}
+
+.status-badge.blocked {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #b91c1c;
+}
+
+/* Status Text in Info Row */
+.status-text {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.status-text.active {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.status-text.blocked {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-scroll::-webkit-scrollbar,
+.lecture-detail-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-scroll,
+.lecture-detail-modal {
+  -ms-overflow-style: none; /* IE + Edge */
+  scrollbar-width: none;     /* Firefox */
+}

@@ -126,6 +126,7 @@ const AdminLayout = () => {
     { title: "Dashboard", url: "/admin", icon: LayoutDashboard, end: true },
     { title: "Courses", url: "/admin/courses", icon: BookOpen },
     { title: "Students", url: "/admin/students", icon: Users },
+    { title: "Lectures", url: "/admin/lectures", icon: Users },
     { title: "Certificates", url: "/admin/certificates", icon: Award },
    // { title: "Reports", url: "/admin/reports", icon: BarChart3 },
     { title: "Settings", url: "/admin/settings", icon: Settings },

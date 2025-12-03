@@ -71,6 +71,10 @@ export function AuthProvider({ children }) {
         setUserRole('student');
         localStorage.setItem('userRole', 'student');
         localStorage.setItem('userData', JSON.stringify(studentUser));
+        
+        // Remove the automatic redirect to password reset
+        // Students can now reset password from their profile
+        
         return { role: 'student', user: studentUser };
       } else {
         throw new Error('Invalid password');
@@ -112,7 +116,36 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  const value = { currentUser, userRole, signup, signin, logout };
+  // Password reset function
+  const resetPassword = async (currentPassword, newPassword) => {
+    if (currentUser && userRole === 'student') {
+      // Verify current password
+      if (currentUser.password !== currentPassword) {
+        throw new Error('Current password is incorrect');
+      }
+      
+      try {
+        await firestoreService.updateStudent(currentUser.id, {
+          password: newPassword,
+          passwordReset: true
+        });
+        
+        // Update current user data
+        const updatedUser = { ...currentUser, password: newPassword, passwordReset: true };
+        setCurrentUser(updatedUser);
+        localStorage.setItem('userData', JSON.stringify(updatedUser));
+        localStorage.removeItem('needsPasswordReset');
+        
+        return true;
+      } catch (error) {
+        console.error('Error resetting password:', error);
+        throw error;
+      }
+    }
+    return false;
+  };
+
+  const value = { currentUser, userRole, signup, signin, logout, resetPassword };
 
   return (
     <AuthContext.Provider value={value}>

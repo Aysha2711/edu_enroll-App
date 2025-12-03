@@ -127,6 +127,100 @@ textarea {
   opacity: 0.9;
 }
 
+/* === Password Section === */
+.password-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.reset-password-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  border: 1px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reset-password-btn:hover {
+  background: #0ea5e9;
+  color: white;
+}
+
+.password-reset-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.password-reset-form h4 {
+  margin-bottom: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.password-input-group {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.password-input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.password-form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #cbd5e1;
+}
+
+.status-active {
+  color: #15803d;
+}
+
+.status-blocked {
+  color: #dc2626;
+}
+
 /* === Sidebar === */
 .profile-sidebar {
   display: flex;
@@ -220,6 +314,26 @@ textarea {
 .download-btn:hover {
   background: #1a237e;
   color: white;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .password-form-buttons {
+    flex-direction: column;
+  }
 }
 
 /* === Footer === */

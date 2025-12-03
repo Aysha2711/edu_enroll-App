@@ -6,6 +6,7 @@ import { Textarea } from "../components/ui/Textarea.jsx";
 import { Label } from "../components/ui/Input.jsx";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "../hooks/use-toast.js";
+
 import "../styles/Contact.css";
 
 const Contact = () => {
@@ -36,13 +37,35 @@ const Contact = () => {
     return () => window.removeEventListener("resize", setEqualHeight);
   }, []);
 
-  const handleSubmit = (e) => {
+  // --- Updated handleSubmit to call server API ---
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Your inquiry was successfully sent to our team.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: err.message || "Failed to send the message.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -61,13 +84,10 @@ const Contact = () => {
         <div className="contact-grid">
           {/* Left side cards */}
           <div className="contact-left">
-            {/* Contact Info Card */}
             <Card className="contact-card" ref={el => leftCardsRef.current[0] = el}>
               <CardContent className="p-4">
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">
-                    <Mail className="h-4 w-4" />
-                  </div>
+                  <div className="contact-info-icon"><Mail className="h-4 w-4" /></div>
                   <div className="contact-info-content">
                     <h3>Email</h3>
                     <p>support@oncode.com</p>
@@ -76,9 +96,7 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">
-                    <Phone className="h-4 w-4" />
-                  </div>
+                  <div className="contact-info-icon"><Phone className="h-4 w-4" /></div>
                   <div className="contact-info-content">
                     <h3>Phone</h3>
                     <p>+1 (555) 123-4567</p>
@@ -87,9 +105,7 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">
-                    <MapPin className="h-4 w-4" />
-                  </div>
+                  <div className="contact-info-icon"><MapPin className="h-4 w-4" /></div>
                   <div className="contact-info-content">
                     <h3>Office</h3>
                     <p>
@@ -102,13 +118,12 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Response Card */}
-            <Card className="contact-quick-response" ref={el => leftCardsRef.current[1] = el}>
+            {/* <Card className="contact-quick-response" ref={el => leftCardsRef.current[1] = el}>
               <CardContent className="p-4">
                 <h3>Quick Response</h3>
                 <p>We typically respond to all inquiries within 24 hours during business days.</p>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
 
           {/* Right side contact form */}

@@ -51,10 +51,10 @@ const Footer = () => {
             <h3>Legal</h3>
             <ul>
               <li>
-                <button type="button" style={{background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', cursor: 'pointer'}}>Terms of Service</button>
+                <Link to="/verify">Terms of Service</Link>
               </li>
               <li>
-                <button type="button" style={{background: 'none', border: 'none', color: 'inherit', textDecoration: 'underline', cursor: 'pointer'}}>Privacy Policy</button>
+                <Link to="/verify">Privacy Policy</Link>
               </li>
               <li>
                 <Link to="/verify">Verify Certificate</Link>

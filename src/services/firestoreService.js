@@ -160,6 +160,53 @@ class FirestoreService {
   async addAdmin(adminData) {
     return await addDoc(collection(db, 'admin'), adminData);
   }
+
+  // Lectures operations
+  async getAllLectures() {
+    try {
+      console.log('Fetching from Lectures collection...');
+      const snapshot = await getDocs(collection(db, 'Lectures'));
+      console.log('Snapshot received:', snapshot.size, 'documents');
+      const lectures = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      console.log('Processed lectures:', lectures);
+      return lectures;
+    } catch (error) {
+      console.error('Error in getAllLectures:', error);
+      throw error;
+    }
+  }
+
+  async getLectureById(lectureId) {
+    const q = query(collection(db, 'Lectures'), where('LectureId', '==', lectureId));
+    const snapshot = await getDocs(q);
+    return snapshot.empty ? null : { id: snapshot.docs[0].id, ...snapshot.docs[0].data() };
+  }
+
+  async addLecture(lectureData) {
+    try {
+      console.log('Adding lecture to Firebase:', lectureData);
+      const docRef = await addDoc(collection(db, 'Lectures'), lectureData);
+      console.log('Lecture added with ID:', docRef.id);
+      return docRef;
+    } catch (error) {
+      console.error('Error adding lecture:', error);
+      throw error;
+    }
+  }
+
+  async updateLecture(docId, lectureData) {
+    const docRef = doc(db, 'Lectures', docId);
+    return await updateDoc(docRef, lectureData);
+  }
+
+  async deleteLecture(lectureId) {
+    const q = query(collection(db, 'Lectures'), where('LectureId', '==', lectureId));
+    const snapshot = await getDocs(q);
+    if (!snapshot.empty) {
+      const docRef = doc(db, 'Lectures', snapshot.docs[0].id);
+      return await deleteDoc(docRef);
+    }
+  }
 }
 
 const firestoreService = new FirestoreService();

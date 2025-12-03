@@ -17,13 +17,16 @@ import NotFound from "./pages/NotFound.jsx";
 import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
 import AdminCourses from "./pages/admin/AdminCourses.jsx";
 import AdminStudents from "./pages/admin/AdminStudents.jsx";
+import AdminLectures from "./pages/admin/AdminLecture.jsx";
 import AdminCertificates from "./pages/admin/AdminCertificates.jsx";
 import AdminReports from "./pages/admin/AdminReports.jsx";
 import AdminSettings from "./pages/admin/AdminSettings.jsx";
 import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 import ForgotPassword from "./pages/auth/ForgotPassword.jsx";
+import PasswordReset from "./pages/PasswordReset.jsx";
 import Enroll from "./pages/Enroll.jsx";
+import Payment from "./pages/Payment.jsx";
 import StudentDashboard from "./pages/studentDash.jsx";
 import StudentCourses from "./pages/studentCourses.jsx";
 import StudentProfile from "./pages/studentProfile.jsx";
@@ -52,6 +55,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/enroll" element={<Enroll />} />
           <Route path="/enroll/:id" element={<Enroll />} />
+          <Route path="/payment/:id" element={<Payment />} />
           <Route path="/verify" element={<VerifyCertificate />} />
           <Route path="/student-dash" element={
             <ProtectedRoute requiredRole="student">
@@ -72,6 +76,7 @@ const App = () => (
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<PasswordReset />} />
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={
             <ProtectedRoute requiredRole="admin">
@@ -86,6 +91,11 @@ const App = () => (
           <Route path="/admin/students" element={
             <ProtectedRoute requiredRole="admin">
               <AdminStudents />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/lectures" element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminLectures />
             </ProtectedRoute>
           } />
           <Route path="/admin/certificates" element={

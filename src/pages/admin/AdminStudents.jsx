@@ -9,6 +9,7 @@ import firestoreService from "../../services/firestoreService";
 const AdminStudents = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [generatedPassword, setGeneratedPassword] = useState("");
   const [courseSelections, setCourseSelections] = useState([
     { value: "Web Development Bootcamp", open: false },
   ]);
@@ -117,6 +118,16 @@ const AdminStudents = () => {
     }
   };
 
+  // Generate random password
+  const generatePassword = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let password = '';
+    for (let i = 0; i < 8; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return password;
+  };
+
   const handleAddStudent = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -128,21 +139,27 @@ const AdminStudents = () => {
       return;
     }
     
+    // Use the already generated password
+    const autoPassword = generatedPassword;
+    
     try {
       const newStudent = {
         fullName: formData.get('fullName'),
         email: formData.get('email'),
-        password: formData.get('password'),
+        password: autoPassword,
         address: formData.get('address'),
         phone: phone,
         status: 'active',
         enrolledCourses: courseSelections.map(course => course.value),
+        passwordReset: false, // Flag to track if password needs reset
         createdAt: new Date()
       };
       
       await firestoreService.addStudent(newStudent);
+      alert(`Student added successfully!\nAuto-generated password: ${autoPassword}\nPlease share this password with the student.`);
       await loadStudents(); // Reload students
       setShowForm(false);
+      setGeneratedPassword(""); // Reset password
     } catch (error) {
       console.error('Error adding student:', error);
       alert('Failed to add student');
@@ -170,7 +187,10 @@ const AdminStudents = () => {
       {/* Header */}
       <div className="admin-students-header">
         <h1 className="admin-students-title">Student Management</h1>
-        <button className="add-student-btn" onClick={() => setShowForm(true)}>
+        <button className="add-student-btn" onClick={() => {
+          setShowForm(true);
+          setGeneratedPassword(generatePassword()); // Generate password when opening form
+        }}>
           + Add Student
         </button>
       </div>
@@ -246,13 +266,13 @@ const AdminStudents = () => {
                 <input type="text" name="fullName" placeholder="Enter full name" required />
 
                 <label>Email</label>
-                <input type="email" name="email" placeholder="Enter email address" required />
-
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Enter password" required />
-
-                <label>Confirm Password</label>
-                <input type="password" name="confirmPassword" placeholder="Re-enter password" required />
+                <div className="email-password-row">
+                  <input type="email" name="email" placeholder="Enter email address" required />
+                </div>
+                <div className="password-display">
+                    <label>Auto-Generated Password</label>
+                    <div className="password-value">{generatedPassword}</div>
+                  </div>
 
                 <label>Address</label>
                 <textarea name="address" placeholder="Enter address"></textarea>
@@ -316,7 +336,10 @@ const AdminStudents = () => {
                 </button>
 
                 <div className="form-buttons">
-                  <button type="button" className="cancel-btn" onClick={() => setShowForm(false)}>
+                  <button type="button" className="cancel-btn" onClick={() => {
+                    setShowForm(false);
+                    setGeneratedPassword(""); // Reset password
+                  }}>
                     Cancel
                   </button>
                   <button type="submit" className="submit-btn">

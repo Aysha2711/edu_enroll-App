@@ -428,6 +428,61 @@
   cursor: pointer;
 }
 
+.email-password-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.email-password-row input[type="email"] {
+  flex: 1;
+}
+
+.password-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.password-display label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.password-value {
+  background: #f0f9ff;
+  border: 1px solid #0ea5e9;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0c4a6e;
+  letter-spacing: 1px;
+  text-align: center;
+  min-height: 20px;
+}
+
+@media (max-width: 768px) {
+  .email-password-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.modal-scroll::-webkit-scrollbar,
+.lecture-detail-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-scroll,
+.lecture-detail-modal {
+  -ms-overflow-style: none; /* IE + Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 /* Animation */
 @keyframes fadeInUp {
   from {

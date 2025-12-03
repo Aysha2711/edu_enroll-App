@@ -199,10 +199,15 @@ const Courses = () => {
 
   const loadCourses = async () => {
     try {
+      console.log('Loading courses from Firebase...');
       const courses = await firestoreService.getAllCourses();
+      console.log('Courses loaded:', courses.length, 'items');
       setAllCourses(courses);
     } catch (error) {
-      console.error('Error loading courses:', error);
+      console.error('Firebase Error loading courses:', error);
+      if (error.code === 'permission-denied') {
+        alert('Firebase permission error. Please check Firestore security rules.');
+      }
     }
   };
 
@@ -278,6 +283,7 @@ const Courses = () => {
         <p className="courses-results-count">
           Showing {displayedCourses.length} of {filteredCourses.length}{" "}
           {filteredCourses.length === 1 ? "course" : "courses"}
+          {allCourses.length === 0 && " (Loading from Firebase...)"}
         </p>
 
         {/* Courses Grid */}
