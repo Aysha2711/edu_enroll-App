@@ -173,7 +173,7 @@ const AdminCertificate = () => {
   /** ---------------- Bulk Certificate Generation ---------------- **/
   const handleBulkGenerate = async (e) => {
     e.preventDefault();
-    if (!bulkCourse || bulkData.length === 0) {
+    if ( bulkData.length === 0) {
       alert("Please select a course and upload student list.");
       return;
     }
