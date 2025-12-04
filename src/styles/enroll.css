@@ -205,3 +205,106 @@
   margin: 0;
   font-weight: 500;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .enroll-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .back-btn {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .enroll-grid {
+    gap: 1rem;
+  }
+  
+  .enroll-form-card,
+  .order-summary {
+    padding: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .complete-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .order-summary h3 {
+    font-size: 1rem;
+  }
+  
+  .price-box {
+    font-size: 0.9rem;
+  }
+  
+  .summary-checks p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .enroll-container {
+    padding: 0.5rem;
+  }
+  
+  .enroll-form-card,
+  .order-summary {
+    padding: 0.75rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+  
+  .form-group input {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .complete-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  .summary-img img {
+    margin-bottom: 0.75rem;
+  }
+  
+  .order-summary h3 {
+    font-size: 0.95rem;
+  }
+  
+  .duration {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price-box {
+    font-size: 0.85rem;
+  }
+  
+  .total-amount {
+    font-size: 1rem;
+  }
+  
+  .summary-checks p {
+    font-size: 0.75rem;
+  }
+  
+  .check-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}

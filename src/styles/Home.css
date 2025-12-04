@@ -413,3 +413,124 @@ html, body {
     transform: translateY(0);
   }
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .home-hero {
+    min-height: 500px;
+  }
+  
+  .home-hero-content {
+    padding: 3rem 1rem;
+  }
+  
+  .home-hero-title {
+    font-size: 2rem;
+  }
+  
+  .home-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .home-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home-section {
+    padding: 3rem 1rem;
+  }
+  
+  .home-steps-bg,
+  .home-testimonials-bg {
+    padding: 3rem 1rem;
+  }
+  
+  .home-cta {
+    padding: 3rem 1rem;
+  }
+  
+  .home-section-title {
+    font-size: 1.5rem;
+  }
+  
+  .home-cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .home-step-number {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+  
+  .home-benefit-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .home-benefit-icon-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: 400px;
+  }
+  
+  .home-hero-content {
+    padding: 2rem 0.5rem;
+  }
+  
+  .home-hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .home-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .home-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .home-steps-bg,
+  .home-testimonials-bg {
+    padding: 2rem 0.5rem;
+  }
+  
+  .home-cta {
+    padding: 2rem 0.5rem;
+  }
+  
+  .home-section-title {
+    font-size: 1.25rem;
+  }
+  
+  .home-cta-title {
+    font-size: 1.25rem;
+  }
+  
+  .home-benefit-card,
+  .home-testimonial-card {
+    padding: 1rem;
+  }
+  
+  .home-step-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .home-benefit-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .home-benefit-icon-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

@@ -494,3 +494,87 @@
     opacity: 1;
   }
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .admin-students-container {
+    padding: 1rem;
+  }
+  
+  .admin-students-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .admin-students-title {
+    font-size: 1.5rem;
+  }
+  
+  .admin-students-search {
+    padding: 0.75rem;
+  }
+  
+  .admin-students-table-wrapper {
+    padding: 12px;
+  }
+  
+  .admin-students-table th,
+  .admin-students-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .course-detail-modal {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .modal-content form {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-students-container {
+    padding: 0.5rem;
+  }
+  
+  .admin-students-title {
+    font-size: 1.25rem;
+  }
+  
+  .add-student-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .admin-students-table-wrapper {
+    padding: 8px;
+  }
+  
+  .admin-students-table th,
+  .admin-students-table td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+  
+  .status-btn {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+  
+  .actions {
+    gap: 4px;
+  }
+  
+  .course-detail-modal {
+    width: 98%;
+    padding: 16px;
+  }
+  
+  .password-value {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

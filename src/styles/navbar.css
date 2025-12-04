@@ -177,3 +177,57 @@
   animation: fadeIn 0.2s ease-in-out;
   z-index: 200;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .logo-icon .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .navbar-auth {
+    gap: 0.5rem;
+  }
+  
+  .dropdown-menu {
+    width: 160px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .logo-icon {
+    padding: 0.4rem;
+  }
+  
+  .logo-icon .icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .dropdown-menu {
+    width: 140px;
+    right: -5px;
+  }
+  
+  .dropdown-item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
